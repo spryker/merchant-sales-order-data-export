@@ -133,7 +133,6 @@ class MerchantSalesOrderDataExportRepository extends AbstractRepository implemen
         $merchantSalesOrderData = $this->formatRowItemDataKeys($merchantSalesOrderData);
 
         if ($hasComments) {
-            /** @var array<int> $salesOrderIds */
             $salesOrderIds = array_column($merchantSalesOrderData, SpyMerchantSalesOrderTableMap::COL_FK_SALES_ORDER);
             $merchantSalesOrderCommentTransfers = $this->getCommentsByOrderIds($salesOrderIds);
 
